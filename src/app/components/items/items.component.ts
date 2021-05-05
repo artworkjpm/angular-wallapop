@@ -9,13 +9,6 @@ import { ApiService } from 'src/app/services/api.service';
   providers: [ApiService],
 })
 export class ItemsComponent implements OnInit {
-  displayedColumns: string[] = [
-    'image',
-    'price',
-    'title',
-    'description',
-    'email',
-  ];
   from = 0;
   to = 5;
 

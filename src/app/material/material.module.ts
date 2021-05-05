@@ -13,6 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
 
 const MaterialComponents = [
   MatMenuModule,
@@ -28,6 +29,7 @@ const MaterialComponents = [
   MatIconModule,
   MatDialogModule,
   MatSnackBarModule,
+  MatSelectModule,
 ];
 
 @NgModule({

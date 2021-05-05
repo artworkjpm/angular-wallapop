@@ -10,6 +10,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { AboutAppComponent } from './components/about-app/about-app.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ItemsComponent,
     AboutAppComponent,
     AboutMeComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
