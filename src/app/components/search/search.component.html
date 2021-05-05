@@ -1,7 +1,10 @@
 <div>
   <mat-form-field appearance="outline">
-    <mat-label>Search items by...</mat-label>
-    <mat-select [(value)]="selected">
+    <mat-label>Sort by...</mat-label>
+    <mat-select
+      [(value)]="selected"
+      (selectionChange)="filterText(inputText.value)"
+    >
       <mat-option value="title">Title</mat-option>
       <mat-option value="description">Description</mat-option>
     </mat-select>
