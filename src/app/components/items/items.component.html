@@ -1,11 +1,20 @@
 <div class="container-grid">
-  <div *ngFor="let item of apiService.itemsArray.slice(0, 5)" class="item">
-    <div>
+  <div *ngFor="let item of apiService.itemsArray.slice(from, to)" class="item">
+    <div class="with-img">
       <img [src]="item.image" alt="item.title" />
     </div>
-    <div>€{{ item.price }}</div>
-    <div>{{ item.title }}</div>
+    <div class="price">€{{ item.price | number }}</div>
+    <div class="title">{{ item.title }}</div>
     <div>{{ item.description }}</div>
-    <div>{{ item.email }}</div>
+    <div class="email">{{ item.email }}</div>
   </div>
+</div>
+<div class="left-side">
+  <mat-paginator
+    [length]="apiService.itemsArray.length"
+    [pageSize]="5"
+    hidePageSize="true"
+    (page)="onPageEvent($event)"
+  >
+  </mat-paginator>
 </div>
