@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 280px 280px 280px;
+  grid-gap: 16px;
+}
+
+.item {
+}

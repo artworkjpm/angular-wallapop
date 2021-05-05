@@ -1,0 +1,11 @@
+<div class="container-grid">
+  <div *ngFor="let item of apiService.itemsArray.slice(0, 5)" class="item">
+    <div>
+      <img [src]="item.image" alt="item.title" />
+    </div>
+    <div>€{{ item.price }}</div>
+    <div>{{ item.title }}</div>
+    <div>{{ item.description }}</div>
+    <div>{{ item.email }}</div>
+  </div>
+</div>
