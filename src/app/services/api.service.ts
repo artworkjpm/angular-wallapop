@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Items } from '../models';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Injectable({
@@ -14,7 +14,6 @@ export class ApiService {
   filterText = '';
   sortType = '';
   favItems: Items[] = [];
-  favAmount = 5;
   constructor(public http: HttpClient) {}
 
   getItems(): Subscription {
@@ -62,30 +61,20 @@ export class ApiService {
     }
   }
 
-  //FAVOURITE CODE
-  incrementCount() {
-    this.favAmount++;
-  }
-  decrementCount() {
-    this.favAmount--;
-    this.favAmount < 0 ? (this.favAmount = 0) : this.favAmount;
-  }
-
+  //FAVOURITES CODE
   addToFav(favClicked: boolean, item: Items) {
     if (favClicked) {
-      this.incrementCount();
       this.favItems.push(item);
     } else {
-      this.decrementCount();
-      this.removeData(item);
+      this.removeFav(item);
     }
     console.log(this.favItems);
   }
 
-  removeData(data: Items) {
+  removeFav(favItem: Items) {
     let removeItem = this.favItems
       .map((item: Items) => item.email)
-      .indexOf(data.email);
+      .indexOf(favItem.email);
     this.favItems.splice(removeItem, 1);
   }
 }
