@@ -11,6 +11,7 @@ import { AboutAppComponent } from './components/about-app/about-app.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SearchComponent } from './components/search/search.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FlexLayoutModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

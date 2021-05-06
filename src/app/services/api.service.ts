@@ -10,6 +10,9 @@ import { take } from 'rxjs/operators';
 export class ApiService {
   API: string = '/items.json';
   itemsArray: Items[] = [];
+  filterBy = '';
+  filterText = '';
+  sortType = '';
   constructor(public http: HttpClient) {}
 
   getItems(): Subscription {
@@ -23,6 +26,8 @@ export class ApiService {
   }
 
   filterItems(filterBy: string, filterText: string): Subscription {
+    this.filterBy = filterBy;
+    this.filterText = filterText;
     return this.http
       .get<{ items: Items[] }>(this.API)
       .pipe(take(1))
@@ -30,6 +35,28 @@ export class ApiService {
         this.itemsArray = items.items.filter((item) => {
           return item[filterBy].toLowerCase().includes(`${filterText}`);
         });
+        if (this.sortType !== 'noPriceSorting') {
+          this.sortBy(this.sortType);
+        }
       });
+  }
+
+  sortBy(sortType: string) {
+    this.sortType = sortType;
+    if (sortType === 'desc') {
+      this.itemsArray.sort((a, b) => {
+        return parseFloat(a.price) - parseFloat(b.price);
+      });
+    } else if (sortType === 'asc') {
+      this.itemsArray.sort((a, b) => {
+        return parseFloat(b.price) - parseFloat(a.price);
+      });
+    } else if (sortType === 'noPriceSorting') {
+      if (this.filterText) {
+        this.filterItems(this.filterBy, this.filterText);
+      } else {
+        this.getItems();
+      }
+    }
   }
 }

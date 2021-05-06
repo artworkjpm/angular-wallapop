@@ -1,19 +1,5 @@
 <div>
   <mat-form-field appearance="outline">
-    <mat-label>Sort by...</mat-label>
-    <mat-select
-      [(value)]="selected"
-      (selectionChange)="filterText(inputText.value)"
-    >
-      <mat-option value="title">Title</mat-option>
-      <mat-option value="description">Description</mat-option>
-      <mat-option value="price">Price</mat-option>
-      <mat-option value="email">Email</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-<div>
-  <mat-form-field appearance="outline">
     <mat-icon matPrefix>search</mat-icon>
     <input
       matInput
@@ -27,9 +13,45 @@
       matSuffix
       mat-icon-button
       aria-label="Clear"
-      (click)="inputText.value = ''"
+      (click)="inputText.value = ''; filterText(inputText.value)"
     >
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+</div>
+<div>
+  <mat-form-field appearance="outline">
+    <mat-label>Search by...</mat-label>
+    <mat-select
+      [(value)]="selected"
+      (selectionChange)="filterText(inputText.value)"
+    >
+      <mat-option value="title">Title</mat-option>
+      <mat-option value="description">Description</mat-option>
+      <mat-option value="price">Price</mat-option>
+      <mat-option value="email">Email</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div>
+  <mat-radio-group aria-label="Select an option" class="radio-group">
+    <mat-radio-button
+      value="desc"
+      class="radio-buttons"
+      (change)="radioChange($event)"
+      >Lowest price first</mat-radio-button
+    >
+    <mat-radio-button
+      value="asc"
+      class="radio-buttons"
+      (change)="radioChange($event)"
+      >Highest price first</mat-radio-button
+    >
+    <mat-radio-button
+      value="noPriceSorting"
+      class="radio-buttons"
+      (change)="radioChange($event)"
+      >No price sorting</mat-radio-button
+    >
+  </mat-radio-group>
 </div>

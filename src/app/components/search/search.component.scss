@@ -3,3 +3,13 @@ input {
   left: 2px;
   position: relative;
 }
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.radio-buttons {
+  margin: 5px 0 10px 0;
+}

@@ -8,6 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class SearchComponent implements OnInit {
   selected = 'title';
+  sortOrder = false;
 
   constructor(public apiService: ApiService) {}
 
@@ -15,5 +16,9 @@ export class SearchComponent implements OnInit {
 
   filterText(receivedText: string) {
     this.apiService.filterItems(this.selected, receivedText.toLowerCase());
+  }
+
+  radioChange(event: { value: string }) {
+    this.apiService.sortBy(event.value);
   }
 }
