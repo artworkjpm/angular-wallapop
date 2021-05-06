@@ -6,7 +6,6 @@ import { ApiService } from 'src/app/services/api.service';
   selector: 'app-items',
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss'],
-  providers: [ApiService],
 })
 export class ItemsComponent implements OnInit {
   from = 0;

@@ -3,7 +3,12 @@
     <div class="with-img">
       <img [src]="item.image" alt="item.title" />
     </div>
-    <div class="price">€{{ item.price | number }}</div>
+    <div class="price">
+      <div class="left">€{{ item.price | number }}</div>
+      <div class="right">
+        <app-fav-icon [item]="item"></app-fav-icon>
+      </div>
+    </div>
     <div class="title">{{ item.title }}</div>
     <div>{{ item.description }}</div>
     <div class="email">{{ item.email }}</div>

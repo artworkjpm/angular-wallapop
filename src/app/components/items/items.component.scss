@@ -13,12 +13,14 @@ table {
   border: 1px solid blue;
   border-radius: 5px;
   padding-bottom: 5px;
-  div:not(.with-img) {
+  div:not(.with-img, .right, .left) {
     padding: 0px 10px 5px 10px;
   }
   .price {
     font-size: 1.2rem;
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
   }
   .title {
     font-size: 1.1rem;
@@ -52,4 +54,8 @@ table {
   background: white;
   height: 100%;
   padding: 0 20px 0 0;
+}
+
+.right {
+  cursor: pointer;
 }

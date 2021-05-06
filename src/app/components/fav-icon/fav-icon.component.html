@@ -1,0 +1,5 @@
+<mat-icon
+  (click)="favClicked = !favClicked; apiService.addToFav(favClicked, item)"
+  [ngClass]="{ red: favClicked }"
+  >favorite</mat-icon
+>

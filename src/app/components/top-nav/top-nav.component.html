@@ -9,4 +9,16 @@
   </mat-menu>
 
   <span>Wallapop Frontend challenge > John Moran</span>
+
+  <div>
+    <button
+      class="fav"
+      mat-raised-button
+      [matBadge]="apiService.favItems.length"
+      (click)="showModal()"
+      matBadgeColor="warn"
+    >
+      Favourites
+    </button>
+  </div>
 </mat-toolbar>
