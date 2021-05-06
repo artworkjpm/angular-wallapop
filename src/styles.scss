@@ -19,3 +19,12 @@ body {
 .mat-paginator-container {
   display: block !important;
 }
+
+.mat-paginator-range-label {
+  margin: 0 20px 0 0 !important;
+  min-width: 120px;
+}
+
+.mat-paginator-navigation-previous {
+  margin-left: 20px;
+}

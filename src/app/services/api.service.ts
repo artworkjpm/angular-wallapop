@@ -27,16 +27,9 @@ export class ApiService {
       .get<{ items: Items[] }>(this.API)
       .pipe(take(1))
       .subscribe((items) => {
-        this.itemsArray = items.items;
-        if (filterBy === 'title') {
-          this.itemsArray = this.itemsArray.filter((item) => {
-            return item.title.toLowerCase().includes(`${filterText}`);
-          });
-        } else if (filterBy === 'description') {
-          this.itemsArray = this.itemsArray.filter((item) => {
-            return item.description.toLowerCase().includes(`${filterText}`);
-          });
-        }
+        this.itemsArray = items.items.filter((item) => {
+          return item[filterBy].toLowerCase().includes(`${filterText}`);
+        });
       });
   }
 }
