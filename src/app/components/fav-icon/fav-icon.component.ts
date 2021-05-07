@@ -13,4 +13,7 @@ export class FavIconComponent implements OnInit {
   constructor(public apiService: ApiService) {}
 
   ngOnInit(): void {}
+  hasItemInFavs(item: Items) {
+    return this.apiService.favItems.some((x) => x.email === item.email);
+  }
 }

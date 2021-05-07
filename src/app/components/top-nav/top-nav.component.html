@@ -14,7 +14,9 @@
     <button
       class="fav"
       mat-raised-button
-      [matBadge]="apiService.favItems.length"
+      [matBadge]="
+        apiService.favItems.length > 0 ? apiService.favItems.length : ''
+      "
       (click)="showModal()"
       matBadgeColor="warn"
     >
