@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../../services/api.service';
 import { FavDialogComponent } from '../fav-dialog/fav-dialog.component';
 
@@ -17,6 +13,8 @@ export class TopNavComponent implements OnInit {
   constructor(public apiService: ApiService, public dialog: MatDialog) {}
   ngOnInit() {}
   showModal() {
-    this.dialog.open(FavDialogComponent);
+    this.dialog.open(FavDialogComponent, {
+      width: '90%',
+    });
   }
 }

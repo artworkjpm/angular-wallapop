@@ -14,6 +14,8 @@ export class FavIconComponent implements OnInit {
 
   ngOnInit(): void {}
   hasItemInFavs(item: Items) {
-    return this.apiService.favItems.some((x) => x.email === item.email);
+    let check = this.apiService.favItems.some((x) => x.email === item.email);
+    check ? (this.favClicked = true) : (this.favClicked = false);
+    return this.favClicked;
   }
 }

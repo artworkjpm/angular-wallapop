@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Favourites</h1>
 <div mat-dialog-content>
-  <mat-form-field>
+  <mat-form-field class="search-bar">
     <input
       matInput
       #inputText
@@ -12,7 +12,7 @@
     <!-- Image Column -->
     <ng-container matColumnDef="picture">
       <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
-      <mat-cell *matCellDef="let item">
+      <mat-cell *matCellDef="let item" class="image-cell">
         <img [src]="item.image" alt="" width="100" height="80" />
       </mat-cell>
     </ng-container>
@@ -26,12 +26,11 @@
     <!-- remove Column -->
     <ng-container matColumnDef="remove">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let item" class="favorite">
+      <mat-cell *matCellDef="let item" class="delete">
         <mat-icon (click)="checkRemove(item)">clear</mat-icon>
       </mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
 </div>

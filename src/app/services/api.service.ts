@@ -65,10 +65,10 @@ export class ApiService {
   addToFav(favClicked: boolean, item: Items) {
     if (favClicked) {
       this.favItems.push(item);
+      console.log(this.favItems);
     } else {
       this.removeFav(item);
     }
-    console.log(this.favItems);
   }
 
   removeFav(favItem: Items) {
@@ -76,5 +76,6 @@ export class ApiService {
       .map((item: Items) => item.email)
       .indexOf(favItem.email);
     this.favItems.splice(removeItem, 1);
+    console.log(this.favItems);
   }
 }
