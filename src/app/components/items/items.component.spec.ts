@@ -23,4 +23,22 @@ describe('ItemsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  let dummyPaginitor = {
+    length: 20,
+    pageIndex: 1,
+    pageSize: 5,
+    previousPageIndex: 0,
+  };
+
+  it('should paginate in sections of 5', () => {
+    //starts at from: 0, to: 5
+    expect(component.from).toBe(0);
+    expect(component.to).toBe(5);
+    //fire function
+    component.onPageEvent(dummyPaginitor);
+    //should go up by 5
+    expect(component.from).toBe(5);
+    expect(component.to).toBe(10);
+  });
 });
