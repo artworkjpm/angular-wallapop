@@ -10,9 +10,10 @@ table {
 }
 
 .item {
-  border: 1px solid blue;
+  border: 2px solid #3f51b5;
   border-radius: 5px;
   padding-bottom: 5px;
+  box-shadow: #9c9c9c 3px 3px 7px 0px;
   div:not(.with-img, .right, .left) {
     padding: 0px 10px 5px 10px;
   }
@@ -35,7 +36,7 @@ table {
   border-radius: 5px 5px 0px 0px;
   max-width: 278px;
   max-height: 230px;
-  overflow: hidden;
+
   text-align: center;
   padding-bottom: 10px;
   img {
