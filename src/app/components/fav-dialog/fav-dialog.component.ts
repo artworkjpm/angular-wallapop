@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Items } from 'src/app/models/index';
 import { ApiService } from 'src/app/services/api.service';
@@ -12,11 +12,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class FavDialogComponent implements OnInit {
   displayedColumns: string[] = ['picture', 'title', 'remove'];
   dataSource: MatTableDataSource<Items> = new MatTableDataSource();
-  constructor(
-    public apiService: ApiService,
-    public dialog: MatDialog,
-    public dialogRef: MatDialogRef<FavDialogComponent>
-  ) {}
+  constructor(public apiService: ApiService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.apiService.favItems);

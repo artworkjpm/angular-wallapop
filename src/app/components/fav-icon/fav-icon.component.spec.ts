@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavIconComponent } from './fav-icon.component';
@@ -8,9 +9,9 @@ describe('FavIconComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavIconComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [FavIconComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

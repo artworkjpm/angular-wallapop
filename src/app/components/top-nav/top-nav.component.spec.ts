@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialModule } from '../../material/material.module';
 
 import { TopNavComponent } from './top-nav.component';
 
@@ -8,9 +10,9 @@ describe('TopNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopNavComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule, MaterialModule],
+      declarations: [TopNavComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
