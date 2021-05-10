@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
+## Hosted on Netlify
+
+https://wallapop-angular-john.netlify.app/
+
 ## Development server
 
 I'm using a proxy to get around the CORS headers problem, run the app locally using `npm start`
