@@ -8,7 +8,7 @@ import { take } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiService {
-  API: string = '/items.json';
+  API_URL: string = '/items.json';
   itemsArray: Items[] = [];
   filterBy = '';
   filterText = '';
@@ -18,7 +18,7 @@ export class ApiService {
 
   getItems(): Subscription {
     return this.http
-      .get<{ items: Items[] }>(this.API)
+      .get<{ items: Items[] }>(this.API_URL)
       .pipe(take(1))
       .subscribe((items) => {
         this.itemsArray = items.items;
@@ -30,7 +30,7 @@ export class ApiService {
     this.filterBy = filterBy;
     this.filterText = filterText;
     return this.http
-      .get<{ items: Items[] }>(this.API)
+      .get<{ items: Items[] }>(this.API_URL)
       .pipe(take(1))
       .subscribe((items) => {
         this.itemsArray = items.items.filter((item) => {
@@ -65,7 +65,6 @@ export class ApiService {
   addToFav(favClicked: boolean, item: Items) {
     if (favClicked) {
       this.favItems.push(item);
-      console.log(this.favItems);
     } else {
       this.removeFav(item);
     }

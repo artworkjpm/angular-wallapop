@@ -1,5 +1,9 @@
 <h1 mat-dialog-title>Favourites</h1>
-<div mat-dialog-content>
+<div *ngIf="apiService.favItems.length === 0">
+  No favourites to show, click on <mat-icon>favorite</mat-icon> to add to
+  favourites
+</div>
+<div mat-dialog-content *ngIf="apiService.favItems.length > 0">
   <mat-form-field class="search-bar">
     <input
       matInput
