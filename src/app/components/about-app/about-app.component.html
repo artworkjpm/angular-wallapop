@@ -1,6 +1,4 @@
-<h1>About this app</h1>
-<h2>Things to mention:</h2>
-
+<h2>About this app:</h2>
 <ul>
   <li>
     First problem I had was this error message about CORS:
@@ -11,6 +9,7 @@
     > I managed to get around that by using a <code>proxy.conf.json</code> file,
     NICE!
   </li>
+  <li>Run the app locally using `npm start`</li>
   <li>
     <b>Unit tests:</b><br />
     My main unit tests are for the
@@ -18,5 +17,19 @@
     REMOVE, <b>ItemsComponent</b> - should paginate in sections of 5 ,
     <b>FavIconComponent </b> - should return false if dummyItem is not in
     dummyFavItems (to control the styling of the heart icon)
+  </li>
+</ul>
+
+<h2>Things to impress:</h2>
+<ul>
+  <li>I added "lowest" and "highest" price filter</li>
+  <li>
+    The app is mobile responsive, show/hiding a dropdown component for the
+    search component on mobile
+  </li>
+  <li>
+    The app doesn't use a complicated state management, like ngrx or redux,
+    although they are very good. I simply save the state in the
+    <b>ApiService</b>
   </li>
 </ul>
