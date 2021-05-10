@@ -12,6 +12,7 @@ import { FavDialogComponent } from '../fav-dialog/fav-dialog.component';
 export class ItemsComponent implements OnInit {
   from = 0;
   to = 5;
+  panelOpenState = false;
 
   constructor(public apiService: ApiService) {}
 

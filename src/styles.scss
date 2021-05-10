@@ -30,3 +30,23 @@ body {
 .mat-paginator-navigation-previous {
   margin-left: 20px;
 }
+
+.desktop {
+  display: block;
+}
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 550px) {
+  /*  app-search {
+    position: absolute;
+    top: 10px;
+  } */
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}

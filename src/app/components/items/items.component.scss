@@ -60,3 +60,30 @@ table {
 .right {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1130px) {
+  .container-grid {
+    grid-template-columns: 280px 280px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .container-grid {
+    grid-template-columns: 280px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container-grid {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .item {
+    margin: 16px 0 16px 0;
+  }
+  .left-side {
+    position: inherit;
+    width: auto;
+  }
+}

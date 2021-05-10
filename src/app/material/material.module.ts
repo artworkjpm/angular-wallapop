@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const MaterialComponents = [
   MatMenuModule,
@@ -26,6 +27,7 @@ const MaterialComponents = [
   MatDialogModule,
   MatSelectModule,
   MatRadioModule,
+  MatExpansionModule,
 ];
 
 @NgModule({
