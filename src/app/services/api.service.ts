@@ -23,7 +23,6 @@ export class ApiService {
       .pipe(take(1))
       .subscribe((items) => {
         this.itemsArray = items.items;
-        console.log(this.itemsArray);
       });
   }
 
@@ -76,6 +75,5 @@ export class ApiService {
       .map((item: Items) => item.email)
       .indexOf(favItem.email);
     this.favItems.splice(removeItem, 1);
-    console.log(this.favItems);
   }
 }
