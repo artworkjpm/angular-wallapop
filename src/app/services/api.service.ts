@@ -3,12 +3,13 @@ import { Items } from '../models';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  API_URL: string = '/items.json';
+  API_URL: string = environment.API_URL;
   itemsArray: Items[] = [];
   filterBy = '';
   filterText = '';

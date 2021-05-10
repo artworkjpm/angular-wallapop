@@ -18,6 +18,7 @@ body {
   font-weight: bold;
   color: black;
 }
+
 .mat-paginator-container {
   display: block !important;
 }
@@ -48,5 +49,10 @@ body {
   }
   .mobile {
     display: block;
+  }
+
+  .mat-paginator {
+    width: 220px;
+    margin: 0 auto;
   }
 }
